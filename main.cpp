@@ -19,7 +19,7 @@ typedef Image<Color> Img;
 const int w = 500, h = 500;
 
 const int divs = 3;
-float decal = 10;
+float decal = 5;
 
 int main() {
     // Importing new images for after
@@ -46,7 +46,7 @@ int main() {
     {
         for(int j = 0; j<divs; j++)
         {
-            display(puzzle_items[i][j], i*subLen+intRandom(2, decal), j*subLen+intRandom(2, decal));
+            display(puzzle_items[i][j], i*(subLen+intRandom(decal/2, decal)), j*(subLen+intRandom(decal/2, decal)));
         }
     }
 
