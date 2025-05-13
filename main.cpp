@@ -16,7 +16,8 @@ using namespace std;
 int main() {
     cout << "Puzzler" << endl;
     milliSleep(1000);
-    cout << "You won !!";
+    cout << "You won !!" << endl;
+    milliSleep(1000);
 
 	return 0;
 }
