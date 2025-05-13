@@ -1,4 +1,9 @@
 cmake_minimum_required(VERSION 3.4)
 
-project(Mastermind)
-add_executable(Mastermind mastermind.cpp)
+project(Puzzler)
+list(APPEND CMAKE_FRAMEWORK_PATH /Library/Frameworks) #Mac, why not auto?
+set(CMAKE_CXX_STANDARD 11)
+find_package(Imagine REQUIRED COMPONENTS Graphics)
+
+add_executable(Puzzler main.cpp)
+target_link_libraries(Puzzler Imagine::Graphics)
