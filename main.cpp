@@ -24,7 +24,7 @@ int main() {
     if (!load(img,srcPath("image.jpg")))
         return 0;
 
-    openWindow(img.width()+20, img.height()+20, "Puzzler");
+    openWindow(img.width()+20, img.height()+20, "Puzzler - Atprog");
 
     display(img, 10, 10);
 
