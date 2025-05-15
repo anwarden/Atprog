@@ -74,7 +74,8 @@ int main() {
         cout << "hello" << endl;
         for(int i = 0; i<divsX; i++)
         {
-            for(int j = 0; j<divsY; j++){
+            for(int j = 0; j<divsY; j++)
+            {
                 puzzle_items[i][j] = img.getSubImage(i*subLen_x, j*subLen_y, subLen_x, subLen_y);
             }
         }
