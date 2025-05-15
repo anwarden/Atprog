@@ -56,11 +56,11 @@ int main() {
     Img img;
     if (!load(img,srcPath("image.jpg"))) return 0;
 
-    float square_dim = min(img.width(), img.height());
-    img = img.getSubImage(0, 0, square_dim, square_dim);
+    //float square_dim = min(img.width(), img.height());
+    //img = img.getSubImage(0, 0, square_dim, square_dim);
 
-    //openWindow(img.width()+decal*divs, img.height()+decal*divs, "Puzzler - Atprog");
-    openWindow(w, h, "Puzzler - Atprog");
+    openWindow(img.width()+decal*divs, img.height()+decal*divs, "Puzzler - Atprog");
+    //openWindow(w, h, "Puzzler - Atprog");
     int option = displayMainMenu();
     if(option == 1)
     {
@@ -68,26 +68,26 @@ int main() {
         //Subdivide the image
         Img puzzle_items[divs][divs];
 
-        float subLen = square_dim/divs;
+        float subLen_x = img.width()/divs;
+        float subLen_y = img.height()/divs;
 
         cout << "hello" << endl;
         for(int i = 0; i<divs; i++)
         {
-            for(int j = 0; j<divs; j++)
-                puzzle_items[i][j] = img.getSubImage(i*subLen, j*subLen, subLen, subLen);
+            for(int j = 0; j<divs; j++){
+                puzzle_items[i][j] = img.getSubImage(i*subLen_x, j*subLen_y, subLen_x, subLen_y);
+            }
         }
-
 
         for(int i = 0; i<divs; i++)
         {
             for(int j = 0; j<divs; j++)
             {
-                display(puzzle_items[i][j], i*(subLen+intRandom(decal/2, decal)), j*(subLen+intRandom(decal/2, decal)));
+                display(puzzle_items[i][j], i*(subLen_x+intRandom(decal/2, decal)), j*(subLen_y+intRandom(decal/2, decal)));
             }
         }
 
         // Some dummy tests
-
 
         //Img testExtract = img.getSubImage(0, 0, img.width()/4, img.width()/4);
         //display(img, 10, 10);
