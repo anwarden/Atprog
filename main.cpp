@@ -83,6 +83,7 @@ int main() {
         {
             for(int j = 0; j<divs; j++)
             {
+
                 display(puzzle_items[i][j], i*(subLen_x+intRandom(decal/2, decal)), j*(subLen_y+intRandom(decal/2, decal)));
             }
         }
