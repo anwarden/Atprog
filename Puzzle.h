@@ -1,8 +1,18 @@
 #pragma once
 
-struct PuzzleItem
+class PuzzleItem
 {
-    int init_x, init_y;
-    int new_x, new_y;
+    int initX, initY;
+    int newX, newY;
+public:
+    PuzzleItem(int initX, int initY, int newX, int newY);
+    int getInitPos();
+    int getnewPos();
+    void displayImage();
+
 };
 
+class Puzzle{
+    int divsX, divsY;
+    int puzzleItems[divsX*divsY];
+};
