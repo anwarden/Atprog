@@ -18,7 +18,7 @@ typedef Image<Color> Img;
 
 const int w = 1000, h = 1000;
 
-const int divs = 3;
+const int divsX = 50, divsY = 3;
 float decal = 5;
 
 Color BACKGROUND_COLOR = GREEN;
@@ -59,29 +59,29 @@ int main() {
     //float square_dim = min(img.width(), img.height());
     //img = img.getSubImage(0, 0, square_dim, square_dim);
 
-    openWindow(img.width()+decal*divs, img.height()+decal*divs, "Puzzler - Atprog");
+    openWindow(img.width()+decal*divsX, img.height()+decal*divsY, "Puzzler - Atprog");
     //openWindow(w, h, "Puzzler - Atprog");
     int option = displayMainMenu();
     if(option == 1)
     {
         clearWindow();
         //Subdivide the image
-        Img puzzle_items[divs][divs];
+        Img puzzle_items[divsX][divsY];
 
-        float subLen_x = img.width()/divs;
-        float subLen_y = img.height()/divs;
+        float subLen_x = img.width()/divsX;
+        float subLen_y = img.height()/divsY;
 
         cout << "hello" << endl;
-        for(int i = 0; i<divs; i++)
+        for(int i = 0; i<divsX; i++)
         {
-            for(int j = 0; j<divs; j++){
+            for(int j = 0; j<divsY; j++){
                 puzzle_items[i][j] = img.getSubImage(i*subLen_x, j*subLen_y, subLen_x, subLen_y);
             }
         }
 
-        for(int i = 0; i<divs; i++)
+        for(int i = 0; i<divsX; i++)
         {
-            for(int j = 0; j<divs; j++)
+            for(int j = 0; j<divsY; j++)
             {
 
                 display(puzzle_items[i][j], i*(subLen_x+intRandom(decal/2, decal)), j*(subLen_y+intRandom(decal/2, decal)));
