@@ -3,10 +3,13 @@
 // Student(s): Anwar Kardid, Abdeladim
 
 #include<iostream>
-
 #include <cstdlib>
 #include <ctime>
+#include <Imagine/Graphics.h>
+#include <vector>
 
+
+#include "PuzzleTile.h"
 #include "Puzzle.h"
 
 
