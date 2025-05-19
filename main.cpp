@@ -3,22 +3,18 @@
 // Student(s): Anwar Kardid, Abdeladim
 
 #include<iostream>
-#include <string>
+
 #include <cstdlib>
 #include <ctime>
 
-#include <Imagine/Graphics.h>
-#include <Imagine/Images.h>
-#include <vector>
+#include "Puzzle.h"
 
-using namespace Imagine;
-using namespace std;
 
-typedef Image<Color> Img;
+
 
 const int w = 1000, h = 1000;
 
-const int divsX = 50, divsY = 3;
+const int divsX = 5, divsY = 3;
 float decal = 5;
 
 Color BACKGROUND_COLOR = GREEN;
@@ -47,7 +43,7 @@ int displayMainMenu() {
         }
     } while (choice == 0);
 
-    return choice;// kanbghik ahbiba
+    return choice;
 }
 
 int main() {
