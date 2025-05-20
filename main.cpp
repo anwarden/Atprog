@@ -17,7 +17,7 @@
 
 const int w = 1000, h = 1000;
 
-const int divsX = 5, divsY = 3;
+const int divsX = 11, divsY = 6;
 float decal = 5;
 
 Color BACKGROUND_COLOR = GREEN;

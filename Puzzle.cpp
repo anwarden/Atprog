@@ -1,18 +1,10 @@
-// Puzzle.cpp — version nettoyée et fonctionnelle
-// -------------------------------------------------
-//  • Mélange Fisher‑Yates correct (uniforme, sans doublons ni cases vides)
-//  • Affichage complet dès la création de l'objet
-//  • Implémentations minimales de findPiece / swapPieces / isSolved
-//  • En‑têtes manquants ajoutés
-
 #include "Puzzle.h"
-#include <algorithm>   // std::swap
-#include <cstdlib>     // std::rand, std::srand
-#include <ctime>       // std::time
 
-//-------------------------------------------------------------------------
-// Constructeur : découpe l'image, crée chaque tuile, puis mélange
-//-------------------------------------------------------------------------
+
+
+// Constructor: cut the image, set the tiles then shuffle the pack
+
+
 Puzzle::Puzzle(const Img& img, int dX, int dY)
     : Image(img), divX(dX), divY(dY) {
 
@@ -26,35 +18,35 @@ Puzzle::Puzzle(const Img& img, int dX, int dY)
                                       tileW, tileH);
             puzzleTiles[col][row].initTile(col, row, sub);
         }
-    shuffle();   // l'objet est prêt‑à‑jouer dès sa construction
+    shuffle();
 }
 
-//-------------------------------------------------------------------------
-// Fisher–Yates : mélange uniforme des indices 0 … nTiles‑1
-//-------------------------------------------------------------------------
+
+// We use the Fisher-Yates method to shuffle
+
 void Puzzle::shuffle() {
     const int total = divX * divY;
 
-    int idx[maxXdiv * maxYdiv];           // tableau temporaire d'indices
+    int idx[maxXdiv * maxYdiv];
     for (int i = 0; i < total; ++i)
         idx[i] = i;
 
-    std::srand(static_cast<unsigned>(std::time(nullptr)));
+    srand(static_cast<unsigned>(std::time(nullptr)));// to make sure we have a different shuffle at every game
     for (int i = total - 1; i > 0; --i) {
         int j = std::rand() % (i + 1);
-        std::swap(idx[i], idx[j]);
+        swap(idx[i], idx[j]);
     }
 
-    // On place chaque tuile mélangée à sa destination et on met à jour ses coords
+    // We put every tile at its destination and update its coordinates
     for (int n = 0; n < total; ++n) {
-        int dstCol = n % divX;      // colonne destination
-        int dstRow = n / divX;      // ligne destination
+        int dstCol = n % divX;
+        int dstRow = n / divX;
 
-        int linSrc = idx[n];        // index linéaire mélangé
+        int linSrc = idx[n];        // linear index
         int srcCol = linSrc % divX;
         int srcRow = linSrc / divX;
 
-        std::swap(puzzleTiles[srcCol][srcRow],
+        swap(puzzleTiles[srcCol][srcRow],
                   puzzleTiles[dstCol][dstRow]);
 
         // mise à jour des positions courantes des deux tuiles échangées
@@ -63,21 +55,21 @@ void Puzzle::shuffle() {
     }
 }
 
-//-------------------------------------------------------------------------
-// Dessine chaque tuile à sa position courante
-//-------------------------------------------------------------------------
+
+// Displaying tiles at their current positions
+
 void Puzzle::show() const {
     clearWindow();
     for (int col = 0; col < divX; ++col)
         for (int row = 0; row < divY; ++row) {
-            const PuzzleTile& t = puzzleTiles[col][row];
+            PuzzleTile t = puzzleTiles[col][row];
             display(t.img(), t.getX() * tileW, t.getY() * tileH);
         }
 }
 
-//-------------------------------------------------------------------------
-// Retourne l'indice linéaire (row * divX + col) de la tuile située en (cx,cy)
-//-------------------------------------------------------------------------
+
+// Return the index (row * divX + col) of the tile in the position (cx,cy)
+
 int Puzzle::findPiece(int cx, int cy) const {
     for (int col = 0; col < divX; ++col)
         for (int row = 0; row < divY; ++row)
@@ -87,22 +79,22 @@ int Puzzle::findPiece(int cx, int cy) const {
     return -1;
 }
 
-//-------------------------------------------------------------------------
-// Échange deux tuiles désignées par leurs indices linéaires
-//-------------------------------------------------------------------------
+
+// swaping two tiles
+
 void Puzzle::swapPieces(int a, int b) {
     if (a == b) return;
     int colA = a % divX, rowA = a / divX;
     int colB = b % divX, rowB = b / divX;
 
-    std::swap(puzzleTiles[colA][rowA], puzzleTiles[colB][rowB]);
+    swap(puzzleTiles[colA][rowA], puzzleTiles[colB][rowB]);
     puzzleTiles[colA][rowA].setPos(colA, rowA);
     puzzleTiles[colB][rowB].setPos(colB, rowB);
 }
 
-//-------------------------------------------------------------------------
-// Le puzzle est-il résolu ?
-//-------------------------------------------------------------------------
+
+// checking if the puzzle is solved
+
 bool Puzzle::isSolved() const {
     for (int col = 0; col < divX; ++col)
         for (int row = 0; row < divY; ++row)
