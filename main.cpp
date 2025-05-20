@@ -65,9 +65,12 @@ int main() {
     {
         clearWindow();
         //Subdivide the image
-        Img puzzle_items[divsX][divsY];
+        Puzzle puzzleGame(img,divsX,divsY);
+        puzzleGame.show();
 
-        float subLen_x = img.width()/divsX;
+        //Img puzzle_items[divsX][divsY];
+
+        /*float subLen_x = img.width()/divsX;
         float subLen_y = img.height()/divsY;
 
         cout << "hello" << endl;
@@ -96,7 +99,7 @@ int main() {
 
 
 
-        //End game
+        //End game*/
         milliSleep(1000);
         endGraphics();
     }

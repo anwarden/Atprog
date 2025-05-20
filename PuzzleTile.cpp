@@ -1,5 +1,7 @@
 #include "PuzzleTile.h"
 
+PuzzleTile::PuzzleTile()
+    : correctX(0), correctY(0), currentX(0), currentY(0) {}
 
 
 void PuzzleTile::initTile(int cX, int cY, const Img& sub){

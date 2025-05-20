@@ -13,7 +13,7 @@ class Puzzle{
     void swapPieces(int a,int b);
     bool isSolved() const;
 public:
-    Puzzle(Img Image, int dX, int dY ); // a constructor that cut the image and save the tiles
+    Puzzle(const Img& Image, int dX, int dY ); // a constructor that cut the image and save the tiles
     void shuffle();
     void show() const;
     void userClick(int px,int py);
