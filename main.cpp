@@ -96,6 +96,26 @@ int displayMainMenu(int &divsX, int &divsY)
     return choice;
 }
 
+void mouse2cell(Img img, int &cellX, int &cellY)
+{
+    int mouseX, mouseY;
+    getMouse(mouseX, mouseY);
+    
+    // Suppose img.width() and img.height() are the puzzle image dimensions
+    int cellWidth = img.width() / divsX;
+    int cellHeight = img.height() / divsY;
+    
+    // Convert mouse coordinates to cell indices
+    cellX = mouseX / cellWidth;
+    cellY = mouseX / cellHeight;
+    
+    // Clamp to valid range if needed
+    if (cellX < 0) cellX = 0;
+    if (cellX >= divsX) cellX = divsX - 1;
+    if (cellY < 0) cellY = 0;
+    if (cellY >= divsY) cellY = divsY - 1;
+}
+
 int main()
 {
     // Importing new images for after
@@ -126,10 +146,21 @@ int main()
         
         while (true)
         {
-            milliSleep(1000);
-            int x1 = intRandom(0, divsX - 1), y1 = intRandom(0, divsY - 1);
-            int x2 = intRandom(0, divsX - 1), y2 = intRandom(0, divsY - 1);
-            puzzleGame.swapPieces(puzzleGame.puzzleTiles[x1][y1], puzzleGame.puzzleTiles[x2][y2]);
+            drawString(w / 10, h - ui_decal / 4, "Click a cell ..", BLACK, 10, 1, false, true);
+            
+            milliSleep(500);
+            // int x1 = intRandom(0, divsX - 1), y1 = intRandom(0, divsY - 1);
+            // int x2 = intRandom(0, divsX - 1), y2 = intRandom(0, divsY - 1);
+            
+            
+            int cellX1, cellY1, cellX2, cellY2;
+            mouse2cell(img, cellX1, cellY1);
+            drawString(5 * w / 10, h - ui_decal / 4, "cell 1", BLACK, 10, 1, false, true);
+            mouse2cell(img, cellX2, cellY2);
+            drawString(8 * w / 10, h - ui_decal / 4, "cell 2", BLACK, 10, 1, false, true);
+
+            
+            puzzleGame.swapPieces(puzzleGame.puzzleTiles[cellX1][cellY1], puzzleGame.puzzleTiles[cellY1][cellY2]);
             puzzleGame.show("Time : 999 , Score: 999", w / 10, h - ui_decal / 2);
         }
 
