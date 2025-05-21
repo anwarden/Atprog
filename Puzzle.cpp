@@ -55,11 +55,13 @@ void Puzzle::shuffle() {
 
 // Displaying tiles at their current positions
 void Puzzle::show(string ui_text, int ui_x, int ui_y) const {
+    const int x_decal = 1, y_decal = 1;
+    const int x_margin = 3, y_margin = 3;
     clearWindow();
     for (int col = 0; col < divX; ++col)
         for (int row = 0; row < divY; ++row) {
             PuzzleTile t = puzzleTiles[col][row];
-            display(t.img(), t.getX() * tileW, t.getY() * tileH);
+            display(t.img(), t.getX()*(x_margin + tileW)+x_margin, t.getY()*(y_margin+tileH)+y_margin);
         }
     drawString(ui_x, ui_y, ui_text, BLACK, 18, 1, false, true);
 }
@@ -89,7 +91,7 @@ int Puzzle::findPiece(int cx, int cy) const {
 // }
 void Puzzle::swapPieces(PuzzleTile &tile1, PuzzleTile &tile2)
 {
-    pair<int, int> temp_coords = {tile1.getX(), tile2.getY()};
+    pair<int, int> temp_coords = {tile1.getX(), tile1.getY()};
     tile1.setPos(tile2.getX(), tile2.getY());
     tile2.setPos(temp_coords.first, temp_coords.second);
 }

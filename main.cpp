@@ -122,11 +122,11 @@ int main()
         // Game mechanics
         puzzleGame.shuffle();
         puzzleGame.show("Go !", w / 10, h - ui_decal / 2);
-        milliSleep(2000);
+        milliSleep(1500);
         
         while (true)
         {
-            milliSleep(500);
+            milliSleep(1000);
             int x1 = intRandom(0, divsX - 1), y1 = intRandom(0, divsY - 1);
             int x2 = intRandom(0, divsX - 1), y2 = intRandom(0, divsY - 1);
             puzzleGame.swapPieces(puzzleGame.puzzleTiles[x1][y1], puzzleGame.puzzleTiles[x2][y2]);
