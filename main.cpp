@@ -146,16 +146,16 @@ int main()
         
         while (true)
         {
-            drawString(w / 10, h - ui_decal / 4, "Click a cell ..", BLACK, 10, 1, false, true);
+            drawString(w / 10, h - ui_decal / 4, "Click a cell ..", BLACK, 10, 0, false, true);
             
             // int x1 = intRandom(0, divsX - 1), y1 = intRandom(0, divsY - 1);
             // int x2 = intRandom(0, divsX - 1), y2 = intRandom(0, divsY - 1);
             
             int cellX1, cellY1, cellX2, cellY2;
             mouse2cell(img, cellX1, cellY1);
-            drawString(3 * w / 10, h - ui_decal / 4, "cell 1", BLACK, 10, 1, false, true);
+            drawString(3 * w / 10, h - ui_decal / 4, "cell 1", BLACK, 10, 0, false, true);
             mouse2cell(img, cellX2, cellY2);
-            drawString(5 * w / 10, h - ui_decal / 4, "cell 2", BLACK, 10, 1, false, true);
+            drawString(5 * w / 10, h - ui_decal / 4, "cell 2", BLACK, 10, 0, false, true);
             milliSleep(500);
 
             
