@@ -17,7 +17,6 @@ class Puzzle{
     
     Puzzle(const Img& Image, int dX, int dY ); // a constructor that cut the image and save the tiles
     void shuffle();
-    void userClick(int px,int py);
     
     void swapPieces(PuzzleTile &tile1, PuzzleTile &tile2);
     bool isSolved() const;
