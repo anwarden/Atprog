@@ -1,0 +1,3 @@
+C:/Users/anwar/Documents/Projects/Atprog-Puzzler/build/CMakeFiles/Puzzler.dir
+C:/Users/anwar/Documents/Projects/Atprog-Puzzler/build/CMakeFiles/edit_cache.dir
+C:/Users/anwar/Documents/Projects/Atprog-Puzzler/build/CMakeFiles/rebuild_cache.dir

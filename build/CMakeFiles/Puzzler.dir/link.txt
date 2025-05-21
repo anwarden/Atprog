@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\Puzzler.dir/objects.a
+C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\Puzzler.dir/objects.a @CMakeFiles\Puzzler.dir\objects1.rsp
+C:\msys64\ucrt64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\Puzzler.dir/objects.a -Wl,--no-whole-archive -o Puzzler.exe -Wl,--out-implib,libPuzzler.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Puzzler.dir\linkLibs.rsp

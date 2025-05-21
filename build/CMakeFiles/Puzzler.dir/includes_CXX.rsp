@@ -1,0 +1,1 @@
+-isystem "C:/ENPC/Imagine++-5.0.0/include" -isystem C:/ENPC/5.15.2/mingw81_64/include -isystem C:/ENPC/5.15.2/mingw81_64/include/QtWidgets -isystem C:/ENPC/5.15.2/mingw81_64/include/QtGui -isystem C:/ENPC/5.15.2/mingw81_64/include/QtANGLE -isystem C:/ENPC/5.15.2/mingw81_64/include/QtCore -isystem "C:/ENPC/5.15.2/mingw81_64/./mkspecs/win32-g++"

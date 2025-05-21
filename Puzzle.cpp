@@ -3,8 +3,6 @@
 
 
 // Constructor: cut the image, set the tiles then shuffle the pack
-
-
 Puzzle::Puzzle(const Img& img, int dX, int dY)
     : Image(img), divX(dX), divY(dY) {
 
@@ -18,12 +16,11 @@ Puzzle::Puzzle(const Img& img, int dX, int dY)
                                       tileW, tileH);
             puzzleTiles[col][row].initTile(col, row, sub);
         }
-    shuffle();
+    //shuffle();
 }
 
 
 // We use the Fisher-Yates method to shuffle
-
 void Puzzle::shuffle() {
     const int total = divX * divY;
 
@@ -57,14 +54,14 @@ void Puzzle::shuffle() {
 
 
 // Displaying tiles at their current positions
-
-void Puzzle::show() const {
+void Puzzle::show(string ui_text, int ui_x, int ui_y) const {
     clearWindow();
     for (int col = 0; col < divX; ++col)
         for (int row = 0; row < divY; ++row) {
             PuzzleTile t = puzzleTiles[col][row];
             display(t.img(), t.getX() * tileW, t.getY() * tileH);
         }
+    drawString(ui_x, ui_y, ui_text, BLACK, 18, 1, false, true);
 }
 
 
@@ -81,15 +78,20 @@ int Puzzle::findPiece(int cx, int cy) const {
 
 
 // swaping two tiles
+// void Puzzle::swapPieces(int a, int b) {
+//     if (a == b) return;
+//     int colA = a % divX, rowA = a / divX;
+//     int colB = b % divX, rowB = b / divX;
 
-void Puzzle::swapPieces(int a, int b) {
-    if (a == b) return;
-    int colA = a % divX, rowA = a / divX;
-    int colB = b % divX, rowB = b / divX;
-
-    swap(puzzleTiles[colA][rowA], puzzleTiles[colB][rowB]);
-    puzzleTiles[colA][rowA].setPos(colA, rowA);
-    puzzleTiles[colB][rowB].setPos(colB, rowB);
+//     swap(puzzleTiles[colA][rowA], puzzleTiles[colB][rowB]);
+//     puzzleTiles[colA][rowA].setPos(colA, rowA);
+//     puzzleTiles[colB][rowB].setPos(colB, rowB);
+// }
+void Puzzle::swapPieces(PuzzleTile &tile1, PuzzleTile &tile2)
+{
+    pair<int, int> temp_coords = {tile1.getX(), tile2.getY()};
+    tile1.setPos(tile2.getX(), tile2.getY());
+    tile2.setPos(temp_coords.first, temp_coords.second);
 }
 
 

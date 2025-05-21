@@ -1,0 +1,20 @@
+[
+{
+  "directory": "C:/Users/anwar/Documents/Projects/Atprog-Puzzler/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DSRCDIR=C:/Users/anwar/Documents/Projects/Atprog-Puzzler @CMakeFiles/Puzzler.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\Puzzler.dir\\main.cpp.obj -c C:\\Users\\anwar\\Documents\\Projects\\Atprog-Puzzler\\main.cpp",
+  "file": "C:/Users/anwar/Documents/Projects/Atprog-Puzzler/main.cpp",
+  "output": "CMakeFiles/Puzzler.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/anwar/Documents/Projects/Atprog-Puzzler/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DSRCDIR=C:/Users/anwar/Documents/Projects/Atprog-Puzzler @CMakeFiles/Puzzler.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\Puzzler.dir\\Puzzle.cpp.obj -c C:\\Users\\anwar\\Documents\\Projects\\Atprog-Puzzler\\Puzzle.cpp",
+  "file": "C:/Users/anwar/Documents/Projects/Atprog-Puzzler/Puzzle.cpp",
+  "output": "CMakeFiles/Puzzler.dir/Puzzle.cpp.obj"
+},
+{
+  "directory": "C:/Users/anwar/Documents/Projects/Atprog-Puzzler/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DSRCDIR=C:/Users/anwar/Documents/Projects/Atprog-Puzzler @CMakeFiles/Puzzler.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\Puzzler.dir\\PuzzleTile.cpp.obj -c C:\\Users\\anwar\\Documents\\Projects\\Atprog-Puzzler\\PuzzleTile.cpp",
+  "file": "C:/Users/anwar/Documents/Projects/Atprog-Puzzler/PuzzleTile.cpp",
+  "output": "CMakeFiles/Puzzler.dir/PuzzleTile.cpp.obj"
+}
+]
