@@ -17,7 +17,7 @@ int divsX = 2, divsY = 2;
 float decal = 5;
 float ui_decal = 70;
 
-Color BACKGROUND_COLOR = GREEN;
+Color BACKGROUND_COLOR = Color(180, 180, 180);
 
 int displayMainMenu(int &divsX, int &divsY)
 {
@@ -137,27 +137,26 @@ int main()
         Puzzle puzzleGame(img, divsX, divsY);
         clearWindow();
         puzzleGame.show("This is the original image !!, Get ready ...", w / 10, h - ui_decal / 2);
-        milliSleep(4000);
+        milliSleep(2500);
         
         // Game mechanics
         puzzleGame.shuffle();
         puzzleGame.show("Go !", w / 10, h - ui_decal / 2);
-        milliSleep(1500);
+        milliSleep(1000);
         
         while (true)
         {
             drawString(w / 10, h - ui_decal / 4, "Click a cell ..", BLACK, 10, 1, false, true);
             
-            milliSleep(500);
             // int x1 = intRandom(0, divsX - 1), y1 = intRandom(0, divsY - 1);
             // int x2 = intRandom(0, divsX - 1), y2 = intRandom(0, divsY - 1);
             
-            
             int cellX1, cellY1, cellX2, cellY2;
             mouse2cell(img, cellX1, cellY1);
-            drawString(5 * w / 10, h - ui_decal / 4, "cell 1", BLACK, 10, 1, false, true);
+            drawString(3 * w / 10, h - ui_decal / 4, "cell 1", BLACK, 10, 1, false, true);
             mouse2cell(img, cellX2, cellY2);
-            drawString(8 * w / 10, h - ui_decal / 4, "cell 2", BLACK, 10, 1, false, true);
+            drawString(5 * w / 10, h - ui_decal / 4, "cell 2", BLACK, 10, 1, false, true);
+            milliSleep(500);
 
             
             puzzleGame.swapPieces(puzzleGame.puzzleTiles[cellX1][cellY1], puzzleGame.puzzleTiles[cellY1][cellY2]);
