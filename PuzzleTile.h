@@ -26,8 +26,6 @@ public:
     int getX () const;
     int getY () const;
     const Img& img() const;
-    int getInitPos();
-    int getnewPos();
 
     // setter
     void setPos(int x,int y);

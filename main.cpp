@@ -14,7 +14,7 @@
 
 const int w = 1000, h = 1000;
 
-const int divsX = 5, divsY = 3;
+const int divsX = 11, divsY = 6;
 float decal = 5;
 
 Color BACKGROUND_COLOR = GREEN;
@@ -62,9 +62,12 @@ int main() {
     {
         clearWindow();
         //Subdivide the image
-        Img puzzle_items[divsX][divsY];
+        Puzzle puzzleGame(img,divsX,divsY);
+        puzzleGame.show();
 
-        float subLen_x = img.width()/divsX;
+        //Img puzzle_items[divsX][divsY];
+
+        /*float subLen_x = img.width()/divsX;
         float subLen_y = img.height()/divsY;
 
         cout << "hello" << endl;
@@ -92,7 +95,7 @@ int main() {
 
 
 
-        //End game
+        //End game*/
         milliSleep(1000);
         endGraphics();
     }

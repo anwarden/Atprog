@@ -1,68 +1,104 @@
 #include "Puzzle.h"
-#include "PuzzleTile.h"
 
 
 
-Puzzle::Puzzle(Img img, int dX, int dY ){
-    Image = img;
-    divX = dX;
-    divY = dY;
-    tileW = img.width()/dX;
-    tileH = img.height()/dY;
+// Constructor: cut the image, set the tiles then shuffle the pack
 
-    for(int i=0; i<divX; i++){
-        for(int j=0; j<divY; j++){
-            Img sub=img.getSubImage(i*divX,j*divY,tileW,tileH);
-            puzzleTiles[i][j].initTile(i,j,sub);
+
+Puzzle::Puzzle(const Img& img, int dX, int dY)
+    : Image(img), divX(dX), divY(dY) {
+
+    tileW = img.width()  / divX;
+    tileH = img.height() / divY;
+
+    for (int col = 0; col < divX; ++col)
+        for (int row = 0; row < divY; ++row) {
+            Img sub = img.getSubImage(col * tileW,   // x (pixels)
+                                      row * tileH,   // y (pixels)
+                                      tileW, tileH);
+            puzzleTiles[col][row].initTile(col, row, sub);
         }
-    }
     shuffle();
 }
 
-// To shuffle the tiles position randomly, we use the Fischer-Yates method
-void Puzzle::shuffle(){
-    int idx[maxXdiv*maxYdiv];
-    for(int i=0;i<divX*divY;++i) idx[i]=i;
 
-    srand(static_cast<unsigned>(time(nullptr)));//To make sure at every second we have a different seed
+// We use the Fisher-Yates method to shuffle
 
-    for(int i=divX*divY-1;i>0;--i){
-        int j = rand()%(i+1);
-        swap(idx[i],idx[j]);
+void Puzzle::shuffle() {
+    const int total = divX * divY;
+
+    int idx[maxXdiv * maxYdiv];
+    for (int i = 0; i < total; ++i)
+        idx[i] = i;
+
+    srand(static_cast<unsigned>(std::time(nullptr)));// to make sure we have a different shuffle at every game
+    for (int i = total - 1; i > 0; --i) {
+        int j = std::rand() % (i + 1);
+        swap(idx[i], idx[j]);
     }
-    // Set the tiles with the current positions
-    for(int k=0;k<divX;++k){
-        for(int l=0;l<divY; l++){
-            int currX = k%divX, currY = l/divX;
-            puzzleTiles[idx[k]][idx[l]].setPos(currX,currY);
-        }
+
+    // We put every tile at its destination and update its coordinates
+    for (int n = 0; n < total; ++n) {
+        int dstCol = n % divX;
+        int dstRow = n / divX;
+
+        int linSrc = idx[n];        // linear index
+        int srcCol = linSrc % divX;
+        int srcRow = linSrc / divX;
+
+        swap(puzzleTiles[srcCol][srcRow],
+                  puzzleTiles[dstCol][dstRow]);
+
+        // mise à jour des positions courantes des deux tuiles échangées
+        puzzleTiles[dstCol][dstRow].setPos(dstCol, dstRow);
+        puzzleTiles[srcCol][srcRow].setPos(srcCol, srcRow);
     }
 }
-//-----------------------------------------------------------------
-//  Dessin : chaque tuile à sa position courante
-//-----------------------------------------------------------------
-void Puzzle::show() const{
+
+
+// Displaying tiles at their current positions
+
+void Puzzle::show() const {
     clearWindow();
-    for(int k=0;k<divX;++k){
-        for(int l=0;l<divY; l++){
-            const PuzzleTile& p = puzzleTiles[k][l];
-            display(p.img(), p.getX()*tileW, p.getY()*tileH);
+    for (int col = 0; col < divX; ++col)
+        for (int row = 0; row < divY; ++row) {
+            PuzzleTile t = puzzleTiles[col][row];
+            display(t.img(), t.getX() * tileW, t.getY() * tileH);
         }
-    }
-}
-void Puzzle::userClick(int px,int py){
-
-}
-void Puzzle::displayPuzzle(){
-
 }
 
-int Puzzle::findPiece(int cx,int cy) const{
 
+// Return the index (row * divX + col) of the tile in the position (cx,cy)
+
+int Puzzle::findPiece(int cx, int cy) const {
+    for (int col = 0; col < divX; ++col)
+        for (int row = 0; row < divY; ++row)
+            if (puzzleTiles[col][row].getX() == cx &&
+                puzzleTiles[col][row].getY() == cy)
+                return row * divX + col;
+    return -1;
 }
-void Puzzle::swapPieces(int a,int b){
 
+
+// swaping two tiles
+
+void Puzzle::swapPieces(int a, int b) {
+    if (a == b) return;
+    int colA = a % divX, rowA = a / divX;
+    int colB = b % divX, rowB = b / divX;
+
+    swap(puzzleTiles[colA][rowA], puzzleTiles[colB][rowB]);
+    puzzleTiles[colA][rowA].setPos(colA, rowA);
+    puzzleTiles[colB][rowB].setPos(colB, rowB);
 }
-bool Puzzle::isSolved() const{
 
+
+// checking if the puzzle is solved
+
+bool Puzzle::isSolved() const {
+    for (int col = 0; col < divX; ++col)
+        for (int row = 0; row < divY; ++row)
+            if (!puzzleTiles[col][row].isCorrect())
+                return false;
+    return true;
 }
