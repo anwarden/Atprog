@@ -12,9 +12,6 @@
 #include "PuzzleTile.h"
 #include "Puzzle.h"
 
-
-
-
 const int w = 1000, h = 1000;
 
 const int divsX = 5, divsY = 3;
@@ -83,7 +80,6 @@ int main() {
         {
             for(int j = 0; j<divsY; j++)
             {
-
                 display(puzzle_items[i][j], i*(subLen_x+intRandom(decal/2, decal)), j*(subLen_y+intRandom(decal/2, decal)));
             }
         }
