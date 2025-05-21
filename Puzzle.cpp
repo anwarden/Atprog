@@ -56,7 +56,7 @@ void Puzzle::shuffle() {
 // Displaying tiles at their current positions
 void Puzzle::show(string ui_text, int ui_x, int ui_y) const {
     const int x_decal = 1, y_decal = 1;
-    const int x_margin = 3, y_margin = 3;
+    const int x_margin = 1, y_margin = 1;
     clearWindow();
     for (int col = 0; col < divX; ++col)
         for (int row = 0; row < divY; ++row) {

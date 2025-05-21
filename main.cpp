@@ -128,8 +128,8 @@ int main()
     h = img.height() + decal * divsY + ui_decal;
     openWindow(w, h, "Puzzler - Atprog");
 
+    
     int option = displayMainMenu(divsX, divsX);
-
     switch (option)
     {
     case 1:
@@ -159,7 +159,7 @@ int main()
             milliSleep(500);
 
             
-            puzzleGame.swapPieces(puzzleGame.puzzleTiles[cellX1][cellY1], puzzleGame.puzzleTiles[cellY1][cellY2]);
+            puzzleGame.swapPieces(puzzleGame.puzzleTiles[cellX1][cellY1], puzzleGame.puzzleTiles[cellX2][cellY2]);
             puzzleGame.show("Time : 999 , Score: 999", w / 10, h - ui_decal / 2);
         }
 
