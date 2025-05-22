@@ -53,10 +53,10 @@ int displayMainMenu(int &divsX, int &divsY)
         clearWindow();
         fillRect(0, 0, w, h, BACKGROUND_COLOR);
         drawString(w / 2 - 150, 100, "Choisissez la difficulté :", BLACK, 28, 1, 0, 1);
-        drawString(w / 2 - 100, 200, "1. Facile (2x2)", BLACK, 20);
-        drawString(w / 2 - 100, 250, "2. Moyen (3x3)", BLACK, 20);
-        drawString(w / 2 - 100, 300, "3. Difficile (4x4)", BLACK, 20);
-        drawString(w / 2 - 100, 350, "4. Master (6x6)", BLACK, 20);
+        drawString(w / 2 - 100, 200, "1. Facile (3x3)", BLACK, 20);
+        drawString(w / 2 - 100, 250, "2. Moyen (4x4)", BLACK, 20);
+        drawString(w / 2 - 100, 300, "3. Difficile (6x6)", BLACK, 20);
+        drawString(w / 2 - 100, 350, "4. Master (8x8)", BLACK, 20);
         drawString(w / 2 - 200, 450, "Appuyez sur un numéro pour choisir la difficulté (1-4)", BLACK, 12);
 
         int diff = 0;
@@ -75,20 +75,20 @@ int displayMainMenu(int &divsX, int &divsY)
         switch (diff)
         {
         case 1:
-            divsX = 2;
-            divsY = 2;
-            break;
-        case 2:
             divsX = 3;
             divsY = 3;
             break;
-        case 3:
+        case 2:
             divsX = 4;
             divsY = 4;
             break;
-        case 4:
+        case 3:
             divsX = 6;
             divsY = 6;
+            break;
+        case 4:
+            divsX = 8;
+            divsY = 8;
             break;
         }
     }
@@ -147,10 +147,11 @@ int main()
     h = img.height() + decal * divsY + ui_decal;
     openWindow(w, h, "Puzzler - Atprog");
 
-    int option = displayMainMenu(divsX, divsX);
+    int option = displayMainMenu(divsX, divsY);
     switch (option)
     {
     case 1:
+    {
         // Initialising the puzzle
         Puzzle puzzleGame(img, divsX, divsY);
         clearWindow();
@@ -162,6 +163,7 @@ int main()
         puzzleGame.show("Go !", w / 10, h - ui_decal / 2);
         milliSleep(250);
 
+        // Game loop
         while (true)
         {
             drawString(w / 10, h - ui_decal / 4, "Click a cell ..", BLACK, 10, 0, false, true);
@@ -171,7 +173,7 @@ int main()
             puzzleGame.swapPieces(cellX1, cellY1, cellX2, cellY2);
 
             puzzleGame.show("Time : 999 , Score: 999", w / 10, h - ui_decal / 2);
-            if(puzzleGame.isSolved())
+            if (puzzleGame.isSolved())
             {
                 puzzleGame.show("You Win !!!", w / 10, h - ui_decal / 2);
                 milliSleep(1000);
@@ -182,7 +184,13 @@ int main()
         // End game*/
         milliSleep(2000);
         endGraphics();
+        // break;
+    }
+    case 3:
+    {
+        //Quit the game;
         break;
+    }
     }
     return 0;
 }

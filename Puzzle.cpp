@@ -65,7 +65,7 @@ void Puzzle::show(string ui_text, int ui_x, int ui_y) const
             PuzzlePiece t = PuzzlePieces[col][row];
             display(t.getImg(), col * (x_margin + tileW) + x_margin, row * (y_margin + tileH) + y_margin);
         }
-    drawString(ui_x, ui_y, ui_text, BLACK, 21, 0, false, true);
+    drawString(ui_x, ui_y, ui_text, BLACK, 27, 0, false, true);
 }
 
 PuzzlePiece &Puzzle::getPiece(int row, int col)
