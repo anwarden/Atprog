@@ -17,7 +17,7 @@ Ce projet est un jeu de puzzle en C++ utilisant la librairie Imagine++. Le jeu p
 
 ## Prérequis
 
-* Un compilateur C++ (par exemple, g++).
+* Un compilateur C++ (par exemple, g++ ou gcc).
 * La librairie Imagine++ installée. Les instructions d'installation peuvent être trouvées sur le site officiel : [https://imagine.enpc.fr/~monasse/Imagine++/](https://imagine.enpc.fr/~monasse/Imagine++/)
 * CMake (pour la gestion du build, recommandé).
 
@@ -50,6 +50,10 @@ Ce projet est un jeu de puzzle en C++ utilisant la librairie Imagine++. Le jeu p
     ```bash
     ./puzzle
     ```
-    (Le nom de l'exécutable peut varier en fonction de la configuration de votre `CMakeLists.txt`).
 
 ## Structure du Projet (Proposition Initiale)
+
+## Contribution
+### Binôme fondateur de projet
+- Anwar Kardid
+- AbdelAdim Boudersa 
