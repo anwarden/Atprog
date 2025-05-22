@@ -1,7 +1,7 @@
 #pragma once
 #include "PuzzlePiece.h"
 #include <string>
-
+#include <Imagine/Graphics.h>
 const int maxXdiv = 20, maxYdiv = 20;
 
 class Puzzle{

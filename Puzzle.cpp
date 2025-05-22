@@ -59,13 +59,16 @@ void Puzzle::show(string ui_text, int ui_x, int ui_y) const
     const int x_decal = 1, y_decal = 1;
     const int x_margin = 1, y_margin = 1;
     clearWindow();
+    ::Image<Color> gamemenu;
+    load(gamemenu, srcPath("gamemenu.png"));
+    display(gamemenu,   0,   0);
     for (int col = 0; col < divX; ++col)
         for (int row = 0; row < divY; ++row)
         {
             PuzzlePiece t = PuzzlePieces[col][row];
             display(t.getImg(), col * (x_margin + tileW) + x_margin, row * (y_margin + tileH) + y_margin);
         }
-    drawString(ui_x, ui_y, ui_text, BLACK, 27, 0, false, true);
+    drawString(ui_x, ui_y, ui_text, WHITE, 27, 0, false, true);
 }
 
 PuzzlePiece &Puzzle::getPiece(int row, int col)

@@ -23,15 +23,9 @@ int displayMainMenu(int &divsX, int &divsY)
 {
     clearWindow();
     fillRect(0, 0, w, h, BACKGROUND_COLOR);
-
-    drawString(w / 2 - 150, 100, "PUZZLER", BLACK, 36, 1, 0, 1);
-    drawString(w / 2 - 200, 150, "Un jeu de puzzle avec Imagine++", BLACK, 18);
-
-    drawString(w / 2 - 100, 250, "1. Jouer", BLACK, 20);
-    drawString(w / 2 - 100, 300, "2. Classement", BLACK, 20);
-    drawString(w / 2 - 100, 350, "3. Quitter", BLACK, 20);
-
-    drawString(w / 2 - 200, 450, "Appuyez sur un numéro pour choisir une option (1-3)", BLACK, 12);
+    Image<Color> menu;
+    load(menu, srcPath("menu.png"));
+    display(menu,   0,   0);
 
     int choice = 0;
     Event e;
@@ -51,14 +45,9 @@ int displayMainMenu(int &divsX, int &divsY)
     if (choice == 1)
     {
         clearWindow();
-        fillRect(0, 0, w, h, BACKGROUND_COLOR);
-        drawString(w / 2 - 150, 100, "Choisissez la difficulté :", BLACK, 28, 1, 0, 1);
-        drawString(w / 2 - 100, 200, "1. Facile (3x3)", BLACK, 20);
-        drawString(w / 2 - 100, 250, "2. Moyen (4x4)", BLACK, 20);
-        drawString(w / 2 - 100, 300, "3. Difficile (6x6)", BLACK, 20);
-        drawString(w / 2 - 100, 350, "4. Master (8x8)", BLACK, 20);
-        drawString(w / 2 - 200, 450, "Appuyez sur un numéro pour choisir la difficulté (1-4)", BLACK, 12);
-
+        Image<Color> difficulties;
+        load(difficulties, srcPath("difficulties.png"));
+        display(difficulties,   0,   0);
         int diff = 0;
         do
         {
@@ -143,11 +132,16 @@ int main()
     if (!load(img, srcPath("image.jpg")))
         return 0;
 
+    img = reduce(img,1.5);
     w = img.width() + decal * divsX;
     h = img.height() + decal * divsY + ui_decal;
     openWindow(w, h, "Puzzler - Atprog");
 
+
+
+
     int option = displayMainMenu(divsX, divsY);
+
     switch (option)
     {
     case 1:
@@ -155,18 +149,20 @@ int main()
         // Initialising the puzzle
         Puzzle puzzleGame(img, divsX, divsY);
         clearWindow();
+
         puzzleGame.show("This is the original image !!, Get ready ...", w / 10, h - ui_decal / 2);
         milliSleep(1500);
 
         // Game mechanics
         puzzleGame.shuffle();
         puzzleGame.show("Go !", w / 10, h - ui_decal / 2);
+
         milliSleep(250);
 
         // Game loop
         while (true)
         {
-            drawString(w / 10, h - ui_decal / 4, "Click a cell ..", BLACK, 10, 0, false, true);
+            drawString(w / 10, h - ui_decal / 4, "Click a cell ..", WHITE, 10, 0, false, true);
 
             int cellX1, cellY1, cellX2, cellY2;
             mouseControl(cellX1, cellY1, cellX2, cellY2, img);
