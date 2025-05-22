@@ -102,19 +102,38 @@ void mouse2cell(Img img, int &cellX, int &cellY)
     // Suppose img.width() and img.height() are the puzzle image dimensions
     int cellWidth = img.width() / divsX;
     int cellHeight = img.height() / divsY;
-    
+
     // Convert mouse coordinates to cell indices
     cellX = mouseX / cellWidth;
     cellY = mouseY / cellHeight;
-    
+
     // Clamp to valid range if needed
-    if (cellX < 0 || cellX >= divsX || cellY < 0 || cellY >= divsY ) 
+    if (cellX < 0 || cellX >= divsX || cellY < 0 || cellY >= divsY)
     {
         cellX = -1;
         cellY = -1;
     }
 
-    cout << "Mouse in : " <<mouseX << " , " << mouseY << " to : " << cellX << " , " << cellY << endl;
+    cout << "Mouse in : " << mouseX << " , " << mouseY << " to : " << cellX << " , " << cellY << endl;
+}
+
+void mouseControl(int &cellX1, int &cellY1, int &cellX2, int &cellY2, Img img)
+{
+    while (true)
+    {
+        mouse2cell(img, cellX1, cellY1);
+        if (cellX1 != -1)
+            break;
+    }
+    drawString(3 * w / 10, h - ui_decal / 4, "cell 1", BLACK, 10, 0, false, true);
+
+    while (true)
+    {
+        mouse2cell(img, cellX2, cellY2);
+        if (cellX2 != -1)
+            break;
+    }
+    drawString(5 * w / 10, h - ui_decal / 4, "cell 2", BLACK, 10, 0, false, true);
 }
 
 int main()
@@ -128,7 +147,6 @@ int main()
     h = img.height() + decal * divsY + ui_decal;
     openWindow(w, h, "Puzzler - Atprog");
 
-    
     int option = displayMainMenu(divsX, divsX);
     switch (option)
     {
@@ -138,36 +156,27 @@ int main()
         clearWindow();
         puzzleGame.show("This is the original image !!, Get ready ...", w / 10, h - ui_decal / 2);
         milliSleep(1500);
-        
+
         // Game mechanics
         puzzleGame.shuffle();
         puzzleGame.show("Go !", w / 10, h - ui_decal / 2);
-        milliSleep(500);
-        
+        milliSleep(250);
+
         while (true)
         {
             drawString(w / 10, h - ui_decal / 4, "Click a cell ..", BLACK, 10, 0, false, true);
-            
-            // int x1 = intRandom(0, divsX - 1), y1 = intRandom(0, divsY - 1);
-            // int x2 = intRandom(0, divsX - 1), y2 = intRandom(0, divsY - 1);
-            
-            int cellX1, cellY1, cellX2, cellY2;
-            while(true)
-            {
-                mouse2cell(img, cellX1, cellY1);
-                if(cellX1 != -1) break;
-            }  
-            drawString(3 * w / 10, h - ui_decal / 4, "cell 1", BLACK, 10, 0, false, true);
 
-            while(true)
-            {
-                mouse2cell(img, cellX2, cellY2);
-                if(cellX2 != -1) break;
-            } 
-            drawString(5 * w / 10, h - ui_decal / 4, "cell 2", BLACK, 10, 0, false, true);
-            
+            int cellX1, cellY1, cellX2, cellY2;
+            mouseControl(cellX1, cellY1, cellX2, cellY2, img);
             puzzleGame.swapPieces(cellX1, cellY1, cellX2, cellY2);
+
             puzzleGame.show("Time : 999 , Score: 999", w / 10, h - ui_decal / 2);
+            if(puzzleGame.isSolved())
+            {
+                puzzleGame.show("You Win !!!", w / 10, h - ui_decal / 2);
+                milliSleep(1000);
+                break;
+            }
         }
 
         // End game*/
