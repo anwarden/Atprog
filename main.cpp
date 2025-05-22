@@ -166,7 +166,7 @@ int main()
             } 
             drawString(5 * w / 10, h - ui_decal / 4, "cell 2", BLACK, 10, 0, false, true);
             
-            puzzleGame.swapPieces(puzzleGame.getPiece(cellX1, cellY1), puzzleGame.getPiece(cellX2, cellY2));
+            puzzleGame.swapPieces(cellX1, cellY1, cellX2, cellY2);
             puzzleGame.show("Time : 999 , Score: 999", w / 10, h - ui_decal / 2);
         }
 

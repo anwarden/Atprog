@@ -14,7 +14,7 @@ typedef Image<Color> Img;
 class PuzzlePiece
 {
     int correctX, correctY;
-    int currentX, currentY;
+    // int currentX, currentY;
     Img subImage;
 
 public:
@@ -23,15 +23,15 @@ public:
     //getter
     int getcX() const;
     int getcY() const;
-    int getX () const;
-    int getY () const;
+    // int getX () const;
+    // int getY () const;
     Img getImg() const;
 
     // setter
-    void setPos(int x,int y);
+    // void setPos(int x,int y);
     void setcPos(int x, int y);
     void setImg(Img img);
 
-    void displayImage();
-    bool isCorrect() const;
+    // void displayImage();
+    // bool isCorrect() const;
 };

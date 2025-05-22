@@ -17,7 +17,7 @@ class Puzzle{
     PuzzlePiece& getPiece(int row, int col);
     void shuffle();
     
-    void swapPieces(PuzzlePiece &piece1, PuzzlePiece &piece2);
+    void swapPieces(int c1, int r1, int c2, int r2);
     bool isSolved() const;
     void show(string ui_text, int ui_x, int ui_y) const;
 };
