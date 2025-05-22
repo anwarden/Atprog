@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Puzzler.dir/Puzzle.cpp.obj"
   "CMakeFiles/Puzzler.dir/Puzzle.cpp.obj.d"
-  "CMakeFiles/Puzzler.dir/PuzzleTile.cpp.obj"
-  "CMakeFiles/Puzzler.dir/PuzzleTile.cpp.obj.d"
+  "CMakeFiles/Puzzler.dir/PuzzlePiece.cpp.obj"
+  "CMakeFiles/Puzzler.dir/PuzzlePiece.cpp.obj.d"
   "CMakeFiles/Puzzler.dir/main.cpp.obj"
   "CMakeFiles/Puzzler.dir/main.cpp.obj.d"
   "Puzzler.exe"

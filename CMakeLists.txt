@@ -8,6 +8,6 @@ find_package(Imagine REQUIRED COMPONENTS Graphics)
 add_executable(Puzzler main.cpp
     Puzzle.h
     Puzzle.cpp
-    PuzzleTile.h
-    PuzzleTile.cpp)
+    PuzzlePiece.h
+    PuzzlePiece.cpp)
 target_link_libraries(Puzzler Imagine::Graphics)

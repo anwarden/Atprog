@@ -101,33 +101,33 @@ CMakeFiles/Puzzler.dir/Puzzle.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Puzzler.dir/Puzzle.cpp.s"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\anwar\Documents\Projects\Atprog-Puzzler\Puzzle.cpp -o CMakeFiles\Puzzler.dir\Puzzle.cpp.s
 
-CMakeFiles/Puzzler.dir/PuzzleTile.cpp.obj: CMakeFiles/Puzzler.dir/flags.make
-CMakeFiles/Puzzler.dir/PuzzleTile.cpp.obj: CMakeFiles/Puzzler.dir/includes_CXX.rsp
-CMakeFiles/Puzzler.dir/PuzzleTile.cpp.obj: C:/Users/anwar/Documents/Projects/Atprog-Puzzler/PuzzleTile.cpp
-CMakeFiles/Puzzler.dir/PuzzleTile.cpp.obj: CMakeFiles/Puzzler.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\anwar\Documents\Projects\Atprog-Puzzler\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Puzzler.dir/PuzzleTile.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Puzzler.dir/PuzzleTile.cpp.obj -MF CMakeFiles\Puzzler.dir\PuzzleTile.cpp.obj.d -o CMakeFiles\Puzzler.dir\PuzzleTile.cpp.obj -c C:\Users\anwar\Documents\Projects\Atprog-Puzzler\PuzzleTile.cpp
+CMakeFiles/Puzzler.dir/PuzzlePiece.cpp.obj: CMakeFiles/Puzzler.dir/flags.make
+CMakeFiles/Puzzler.dir/PuzzlePiece.cpp.obj: CMakeFiles/Puzzler.dir/includes_CXX.rsp
+CMakeFiles/Puzzler.dir/PuzzlePiece.cpp.obj: C:/Users/anwar/Documents/Projects/Atprog-Puzzler/PuzzlePiece.cpp
+CMakeFiles/Puzzler.dir/PuzzlePiece.cpp.obj: CMakeFiles/Puzzler.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\anwar\Documents\Projects\Atprog-Puzzler\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Puzzler.dir/PuzzlePiece.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Puzzler.dir/PuzzlePiece.cpp.obj -MF CMakeFiles\Puzzler.dir\PuzzlePiece.cpp.obj.d -o CMakeFiles\Puzzler.dir\PuzzlePiece.cpp.obj -c C:\Users\anwar\Documents\Projects\Atprog-Puzzler\PuzzlePiece.cpp
 
-CMakeFiles/Puzzler.dir/PuzzleTile.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Puzzler.dir/PuzzleTile.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\anwar\Documents\Projects\Atprog-Puzzler\PuzzleTile.cpp > CMakeFiles\Puzzler.dir\PuzzleTile.cpp.i
+CMakeFiles/Puzzler.dir/PuzzlePiece.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Puzzler.dir/PuzzlePiece.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\anwar\Documents\Projects\Atprog-Puzzler\PuzzlePiece.cpp > CMakeFiles\Puzzler.dir\PuzzlePiece.cpp.i
 
-CMakeFiles/Puzzler.dir/PuzzleTile.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Puzzler.dir/PuzzleTile.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\anwar\Documents\Projects\Atprog-Puzzler\PuzzleTile.cpp -o CMakeFiles\Puzzler.dir\PuzzleTile.cpp.s
+CMakeFiles/Puzzler.dir/PuzzlePiece.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Puzzler.dir/PuzzlePiece.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\anwar\Documents\Projects\Atprog-Puzzler\PuzzlePiece.cpp -o CMakeFiles\Puzzler.dir\PuzzlePiece.cpp.s
 
 # Object files for target Puzzler
 Puzzler_OBJECTS = \
 "CMakeFiles/Puzzler.dir/main.cpp.obj" \
 "CMakeFiles/Puzzler.dir/Puzzle.cpp.obj" \
-"CMakeFiles/Puzzler.dir/PuzzleTile.cpp.obj"
+"CMakeFiles/Puzzler.dir/PuzzlePiece.cpp.obj"
 
 # External object files for target Puzzler
 Puzzler_EXTERNAL_OBJECTS =
 
 Puzzler.exe: CMakeFiles/Puzzler.dir/main.cpp.obj
 Puzzler.exe: CMakeFiles/Puzzler.dir/Puzzle.cpp.obj
-Puzzler.exe: CMakeFiles/Puzzler.dir/PuzzleTile.cpp.obj
+Puzzler.exe: CMakeFiles/Puzzler.dir/PuzzlePiece.cpp.obj
 Puzzler.exe: CMakeFiles/Puzzler.dir/build.make
 Puzzler.exe: C:/ENPC/Imagine++-5.0.0/lib/libImagineGraphics.a
 Puzzler.exe: C:/ENPC/5.15.2/mingw81_64/lib/libQt5Widgets.a

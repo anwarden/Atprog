@@ -11,24 +11,26 @@ using namespace Imagine;
 typedef Image<Color> Img;
 
 
-class PuzzleTile
+class PuzzlePiece
 {
     int correctX, correctY;
     int currentX, currentY;
     Img subImage;
 
 public:
-    PuzzleTile();
-    void initTile(int cX, int cY, const Img& sub);
+    PuzzlePiece();
+    void initPiece(int cX, int cY, const Img& sub);
     //getter
     int getcX() const;
     int getcY() const;
     int getX () const;
     int getY () const;
-    const Img& img() const;
+    Img getImg() const;
 
     // setter
     void setPos(int x,int y);
+    void setcPos(int x, int y);
+    void setImg(Img img);
 
     void displayImage();
     bool isCorrect() const;

@@ -152,29 +152,29 @@ Puzzle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Puzzler.dir\build.make CMakeFiles/Puzzler.dir/Puzzle.cpp.s
 .PHONY : Puzzle.cpp.s
 
-PuzzleTile.obj: PuzzleTile.cpp.obj
-.PHONY : PuzzleTile.obj
+PuzzlePiece.obj: PuzzlePiece.cpp.obj
+.PHONY : PuzzlePiece.obj
 
 # target to build an object file
-PuzzleTile.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Puzzler.dir\build.make CMakeFiles/Puzzler.dir/PuzzleTile.cpp.obj
-.PHONY : PuzzleTile.cpp.obj
+PuzzlePiece.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Puzzler.dir\build.make CMakeFiles/Puzzler.dir/PuzzlePiece.cpp.obj
+.PHONY : PuzzlePiece.cpp.obj
 
-PuzzleTile.i: PuzzleTile.cpp.i
-.PHONY : PuzzleTile.i
+PuzzlePiece.i: PuzzlePiece.cpp.i
+.PHONY : PuzzlePiece.i
 
 # target to preprocess a source file
-PuzzleTile.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Puzzler.dir\build.make CMakeFiles/Puzzler.dir/PuzzleTile.cpp.i
-.PHONY : PuzzleTile.cpp.i
+PuzzlePiece.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Puzzler.dir\build.make CMakeFiles/Puzzler.dir/PuzzlePiece.cpp.i
+.PHONY : PuzzlePiece.cpp.i
 
-PuzzleTile.s: PuzzleTile.cpp.s
-.PHONY : PuzzleTile.s
+PuzzlePiece.s: PuzzlePiece.cpp.s
+.PHONY : PuzzlePiece.s
 
 # target to generate assembly for a file
-PuzzleTile.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Puzzler.dir\build.make CMakeFiles/Puzzler.dir/PuzzleTile.cpp.s
-.PHONY : PuzzleTile.cpp.s
+PuzzlePiece.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Puzzler.dir\build.make CMakeFiles/Puzzler.dir/PuzzlePiece.cpp.s
+.PHONY : PuzzlePiece.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -212,9 +212,9 @@ help:
 	@echo ... Puzzle.obj
 	@echo ... Puzzle.i
 	@echo ... Puzzle.s
-	@echo ... PuzzleTile.obj
-	@echo ... PuzzleTile.i
-	@echo ... PuzzleTile.s
+	@echo ... PuzzlePiece.obj
+	@echo ... PuzzlePiece.i
+	@echo ... PuzzlePiece.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

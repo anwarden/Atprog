@@ -1,7 +1,7 @@
 CMakeFiles/Puzzler.dir/Puzzle.cpp.obj: \
  C:\Users\anwar\Documents\Projects\Atprog-Puzzler\Puzzle.cpp \
  C:\Users\anwar\Documents\Projects\Atprog-Puzzler\Puzzle.h \
- C:\Users\anwar\Documents\Projects\Atprog-Puzzler\PuzzleTile.h \
+ C:\Users\anwar\Documents\Projects\Atprog-Puzzler\PuzzlePiece.h \
  C:/ENPC/Imagine++-5.0.0/include/Imagine/Images.h \
  C:/msys64/ucrt64/include/c++/14.2.0/numeric \
  C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \

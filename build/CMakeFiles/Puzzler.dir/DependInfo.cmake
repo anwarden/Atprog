@@ -9,7 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/anwar/Documents/Projects/Atprog-Puzzler/Puzzle.cpp" "CMakeFiles/Puzzler.dir/Puzzle.cpp.obj" "gcc" "CMakeFiles/Puzzler.dir/Puzzle.cpp.obj.d"
-  "C:/Users/anwar/Documents/Projects/Atprog-Puzzler/PuzzleTile.cpp" "CMakeFiles/Puzzler.dir/PuzzleTile.cpp.obj" "gcc" "CMakeFiles/Puzzler.dir/PuzzleTile.cpp.obj.d"
+  "C:/Users/anwar/Documents/Projects/Atprog-Puzzler/PuzzlePiece.cpp" "CMakeFiles/Puzzler.dir/PuzzlePiece.cpp.obj" "gcc" "CMakeFiles/Puzzler.dir/PuzzlePiece.cpp.obj.d"
   "C:/Users/anwar/Documents/Projects/Atprog-Puzzler/main.cpp" "CMakeFiles/Puzzler.dir/main.cpp.obj" "gcc" "CMakeFiles/Puzzler.dir/main.cpp.obj.d"
   )
 

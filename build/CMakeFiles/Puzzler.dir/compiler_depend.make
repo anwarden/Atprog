@@ -206,9 +206,9 @@ CMakeFiles/Puzzler.dir/Puzzle.cpp.obj: C:/Users/anwar/Documents/Projects/Atprog-
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
   C:/Users/anwar/Documents/Projects/Atprog-Puzzler/Puzzle.h \
-  C:/Users/anwar/Documents/Projects/Atprog-Puzzler/PuzzleTile.h
+  C:/Users/anwar/Documents/Projects/Atprog-Puzzler/PuzzlePiece.h
 
-CMakeFiles/Puzzler.dir/PuzzleTile.cpp.obj: C:/Users/anwar/Documents/Projects/Atprog-Puzzler/PuzzleTile.cpp \
+CMakeFiles/Puzzler.dir/PuzzlePiece.cpp.obj: C:/Users/anwar/Documents/Projects/Atprog-Puzzler/PuzzlePiece.cpp \
   C:/ENPC/Imagine++-5.0.0/include/Imagine/Common.h \
   C:/ENPC/Imagine++-5.0.0/include/Imagine/Common/Array.h \
   C:/ENPC/Imagine++-5.0.0/include/Imagine/Common/Base.h \
@@ -412,7 +412,7 @@ CMakeFiles/Puzzler.dir/PuzzleTile.cpp.obj: C:/Users/anwar/Documents/Projects/Atp
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
-  C:/Users/anwar/Documents/Projects/Atprog-Puzzler/PuzzleTile.h
+  C:/Users/anwar/Documents/Projects/Atprog-Puzzler/PuzzlePiece.h
 
 CMakeFiles/Puzzler.dir/main.cpp.obj: C:/Users/anwar/Documents/Projects/Atprog-Puzzler/main.cpp \
   C:/ENPC/Imagine++-5.0.0/include/Imagine/Common.h \
@@ -619,7 +619,7 @@ CMakeFiles/Puzzler.dir/main.cpp.obj: C:/Users/anwar/Documents/Projects/Atprog-Pu
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
   C:/Users/anwar/Documents/Projects/Atprog-Puzzler/Puzzle.h \
-  C:/Users/anwar/Documents/Projects/Atprog-Puzzler/PuzzleTile.h
+  C:/Users/anwar/Documents/Projects/Atprog-Puzzler/PuzzlePiece.h
 
 
 C:/msys64/ucrt64/include/c++/14.2.0/bits/cxxabi_forced.h:
@@ -697,6 +697,8 @@ C:/ENPC/Imagine++-5.0.0/include/Imagine/Graphics/Mesh.h:
 C:/ENPC/Imagine++-5.0.0/include/Imagine/Images/Algos.h:
 
 C:/msys64/ucrt64/include/_mingw_secapi.h:
+
+C:/Users/anwar/Documents/Projects/Atprog-Puzzler/PuzzlePiece.h:
 
 C:/ENPC/Imagine++-5.0.0/include/Imagine/Graphics/Window.h:
 
@@ -952,8 +954,6 @@ C:/msys64/ucrt64/include/c++/14.2.0/type_traits:
 
 C:/msys64/ucrt64/include/c++/14.2.0/typeinfo:
 
-C:/Users/anwar/Documents/Projects/Atprog-Puzzler/PuzzleTile.h:
-
 C:/msys64/ucrt64/include/c++/14.2.0/vector:
 
 C:/msys64/ucrt64/include/pthread_unistd.h:
@@ -967,8 +967,6 @@ C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h:
 C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h:
 
 C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++locale.h:
-
-C:/Users/anwar/Documents/Projects/Atprog-Puzzler/PuzzleTile.cpp:
 
 C:/msys64/ucrt64/include/c++/14.2.0/x86_64-w64-mingw32/bits/cpu_defines.h:
 
@@ -1037,3 +1035,5 @@ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h:
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h:
 
 C:/Users/anwar/Documents/Projects/Atprog-Puzzler/Puzzle.h:
+
+C:/Users/anwar/Documents/Projects/Atprog-Puzzler/PuzzlePiece.cpp:

@@ -1,24 +1,23 @@
 #pragma once
-#include "PuzzleTile.h"
+#include "PuzzlePiece.h"
 #include <string>
 
 const int maxXdiv = 20, maxYdiv = 20;
-
 
 class Puzzle{
     Img Image;
     int divX, divY;
     int tileW, tileH;
     int findPiece(int cx,int cy) const;
+    PuzzlePiece PuzzlePieces[maxXdiv][maxYdiv];
     // void swapPieces(int a,int b);
     
     public:
-    PuzzleTile puzzleTiles[maxXdiv][maxYdiv];
-    
     Puzzle(const Img& Image, int dX, int dY ); // a constructor that cut the image and save the tiles
+    PuzzlePiece& getPiece(int row, int col);
     void shuffle();
     
-    void swapPieces(PuzzleTile &tile1, PuzzleTile &tile2);
+    void swapPieces(PuzzlePiece &piece1, PuzzlePiece &piece2);
     bool isSolved() const;
     void show(string ui_text, int ui_x, int ui_y) const;
 };
