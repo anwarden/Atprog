@@ -25,7 +25,7 @@ int displayMainMenu(int &divsX, int &divsY)
     fillRect(0, 0, w, h, BACKGROUND_COLOR);
     Image<Color> menu;
     load(menu, srcPath("menu.png"));
-    display(menu,   0,   0);
+    display(menu, 0, 0);
 
     int choice = 0;
     Event e;
@@ -47,7 +47,7 @@ int displayMainMenu(int &divsX, int &divsY)
         clearWindow();
         Image<Color> difficulties;
         load(difficulties, srcPath("difficulties.png"));
-        display(difficulties,   0,   0);
+        display(difficulties, 0, 0);
         int diff = 0;
         do
         {
@@ -103,7 +103,7 @@ void mouse2cell(Img img, int &cellX, int &cellY)
         cellY = -1;
     }
 
-    cout << "Mouse in : " << mouseX << " , " << mouseY << " to : " << cellX << " , " << cellY << endl;
+    // cout << "Mouse in : " << mouseX << " , " << mouseY << " to : " << cellX << " , " << cellY << endl;
 }
 
 void mouseControl(int &cellX1, int &cellY1, int &cellX2, int &cellY2, Img img)
@@ -114,16 +114,20 @@ void mouseControl(int &cellX1, int &cellY1, int &cellX2, int &cellY2, Img img)
         if (cellX1 != -1)
             break;
     }
-    drawString(3 * w / 10, h - ui_decal / 4, "cell 1", BLACK, 10, 0, false, true);
-
+    drawString(3 * w / 10, h - ui_decal / 4, "Cell 1, ", WHITE, 14, 0, false, true);
+    AlphaColor transCol(255, 0, 0, 128);
+    fillRect(cellX1 * img.width()/divsX, cellY1 * img.height()/divsY, img.width()/divsX, img.height()/divsY, transCol);
+    
     while (true)
     {
         mouse2cell(img, cellX2, cellY2);
         if (cellX2 != -1)
-            break;
+        break;
     }
-    drawString(5 * w / 10, h - ui_decal / 4, "cell 2", BLACK, 10, 0, false, true);
-}
+    drawString(3 * w / 10 + 70, h - ui_decal / 4, "Cell 2", WHITE, 14, 0, false, true);
+    fillRect(cellX2 * (img.width()/divsX+1), cellY2 * (img.height()/divsY+1), img.width()/divsX, img.height()/divsY, transCol);
+    milliSleep(150);
+ }
 
 int main()
 {
@@ -132,13 +136,10 @@ int main()
     if (!load(img, srcPath("image.jpg")))
         return 0;
 
-    img = reduce(img,1.5);
+    img = reduce(img, 1.5);
     w = img.width() + decal * divsX;
     h = img.height() + decal * divsY + ui_decal;
     openWindow(w, h, "Puzzler - Atprog");
-
-
-
 
     int option = displayMainMenu(divsX, divsY);
 
@@ -151,14 +152,16 @@ int main()
         clearWindow();
 
         puzzleGame.show("This is the original image !!, Get ready ...", w / 10, h - ui_decal / 2);
-        milliSleep(1500);
+        milliSleep(2000);
 
         // Game mechanics
         puzzleGame.shuffle();
         puzzleGame.show("Go !", w / 10, h - ui_decal / 2);
 
-        milliSleep(250);
+        milliSleep(500);
 
+        int swap_counter = 0;
+        puzzleGame.show("Puzzle swaps: " + to_string(swap_counter), w / 10, h - ui_decal / 2);
         // Game loop
         while (true)
         {
@@ -167,11 +170,12 @@ int main()
             int cellX1, cellY1, cellX2, cellY2;
             mouseControl(cellX1, cellY1, cellX2, cellY2, img);
             puzzleGame.swapPieces(cellX1, cellY1, cellX2, cellY2);
+            swap_counter++;
 
-            puzzleGame.show("Time : 999 , Score: 999", w / 10, h - ui_decal / 2);
+            puzzleGame.show("Puzzle swaps: " + to_string(swap_counter), w / 10, h - ui_decal / 2);
             if (puzzleGame.isSolved())
             {
-                puzzleGame.show("You Win !!!", w / 10, h - ui_decal / 2);
+                puzzleGame.show("You Win !! After " + to_string(swap_counter) + " swaps.", w / 10, h - ui_decal / 2);
                 milliSleep(1000);
                 break;
             }
@@ -184,7 +188,7 @@ int main()
     }
     case 3:
     {
-        //Quit the game;
+        // Quit the game;
         break;
     }
     }

@@ -56,7 +56,7 @@ void Puzzle::shuffle()
 // Displaying tiles at their current positions
 void Puzzle::show(string ui_text, int ui_x, int ui_y) const
 {
-    const int x_decal = 1, y_decal = 1;
+    const int x_decal = 2, y_decal = 2;
     const int x_margin = 1, y_margin = 1;
     clearWindow();
     ::Image<Color> gamemenu;
