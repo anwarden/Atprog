@@ -115,8 +115,8 @@ void mouseControl(int &cellX1, int &cellY1, int &cellX2, int &cellY2, Img img)
             break;
     }
     drawString(3 * w / 10, h - ui_decal / 4, "Cell 1, ", WHITE, 14, 0, false, true);
-    AlphaColor transCol(255, 0, 0, 128);
-    fillRect(cellX1 * img.width()/divsX, cellY1 * img.height()/divsY, img.width()/divsX, img.height()/divsY, transCol);
+    AlphaColor transCol(255, 255, 255, 158);
+    fillRect(cellX1 * (img.width()/divsX+2), cellY1 * (img.height()/divsY+2), img.width()/divsX, img.height()/divsY, transCol);
     
     while (true)
     {
@@ -125,7 +125,7 @@ void mouseControl(int &cellX1, int &cellY1, int &cellX2, int &cellY2, Img img)
         break;
     }
     drawString(3 * w / 10 + 70, h - ui_decal / 4, "Cell 2", WHITE, 14, 0, false, true);
-    fillRect(cellX2 * (img.width()/divsX+1), cellY2 * (img.height()/divsY+1), img.width()/divsX, img.height()/divsY, transCol);
+    fillRect(cellX2 * (img.width()/divsX+2), cellY2 * (img.height()/divsY+2), img.width()/divsX, img.height()/divsY, transCol);
     milliSleep(150);
  }
 
@@ -152,13 +152,13 @@ int main()
         clearWindow();
 
         puzzleGame.show("This is the original image !!, Get ready ...", w / 10, h - ui_decal / 2);
-        milliSleep(2000);
+        milliSleep(4000);
 
         // Game mechanics
         puzzleGame.shuffle();
         puzzleGame.show("Go !", w / 10, h - ui_decal / 2);
 
-        milliSleep(500);
+        milliSleep(400);
 
         int swap_counter = 0;
         puzzleGame.show("Puzzle swaps: " + to_string(swap_counter), w / 10, h - ui_decal / 2);
@@ -176,13 +176,12 @@ int main()
             if (puzzleGame.isSolved())
             {
                 puzzleGame.show("You Win !! After " + to_string(swap_counter) + " swaps.", w / 10, h - ui_decal / 2);
-                milliSleep(1000);
                 break;
             }
         }
 
         // End game*/
-        milliSleep(2000);
+        milliSleep(4000);
         endGraphics();
         // break;
     }
