@@ -23,7 +23,6 @@ Color BACKGROUND_COLOR = Color(180, 180, 180);
 void displayImageMenu()
 {
     clearWindow();
-    fillRect(0, 0, w, h, BACKGROUND_COLOR);
     // drawString(w/2, h/2, "Select an image", BLACK, 40);
     Image<Color> menu;
     load(menu, srcPath("imageSelectionMenu.jpg"));   //Images selection menu
@@ -80,7 +79,7 @@ int displayMainMenu(int &divsX, int &divsY)
             getEvent(0, e);
             if (e.type == EVT_KEY_ON)
             {
-                if (e.key >= '1' && e.key <= '4')
+                if (e.key >= '1' && e.key <= '5')
                 {
                     diff = e.key - '0';
                 }
@@ -104,6 +103,10 @@ int displayMainMenu(int &divsX, int &divsY)
         case 4:
             divsX = 8;
             divsY = 8;
+            break;
+        case 5:
+            divsX = 10;
+            divsY = 10;
             break;
         }
         displayImageMenu();
@@ -153,7 +156,7 @@ void mouseControl(int &cellX1, int &cellY1, int &cellX2, int &cellY2, Img img)
     }
     drawString(3 * w / 10 + 70, h - ui_decal / 4, "Cell 2", WHITE, 14, 0, false, true);
     fillRect(cellX2 * (img.width()/divsX+2), cellY2 * (img.height()/divsY+2), img.width()/divsX, img.height()/divsY, transCol);
-    milliSleep(150);
+    milliSleep(100);
  }
 
 int main()
