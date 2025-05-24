@@ -11,13 +11,39 @@
 #include "PuzzlePiece.h"
 #include "Puzzle.h"
 
-int w = 1000, h = 1000;
+int w = 1280, h = 802;
 
 int divsX = 2, divsY = 2;
+int imageIndex = 1;
 float decal = 5;
 float ui_decal = 70;
 
 Color BACKGROUND_COLOR = Color(180, 180, 180);
+
+void displayImageMenu()
+{
+    clearWindow();
+    fillRect(0, 0, w, h, BACKGROUND_COLOR);
+    // drawString(w/2, h/2, "Select an image", BLACK, 40);
+    Image<Color> menu;
+    load(menu, srcPath("imageSelectionMenu.jpg"));   //Images selection menu
+    display(menu, 0, 0);
+
+    int choice = 0;
+    Event e;
+    do
+    {
+        getEvent(0, e);
+        if (e.type == EVT_KEY_ON)
+        {
+            if (e.key >= '1' && e.key <= '9')
+            {
+                choice = e.key - '0';
+            }
+        }
+    } while (choice == 0);    
+    imageIndex = choice;
+}
 
 int displayMainMenu(int &divsX, int &divsY)
 {
@@ -80,6 +106,7 @@ int displayMainMenu(int &divsX, int &divsY)
             divsY = 8;
             break;
         }
+        displayImageMenu();
     }
     return choice;
 }
@@ -132,21 +159,21 @@ void mouseControl(int &cellX1, int &cellY1, int &cellX2, int &cellY2, Img img)
 int main()
 {
     // Importing new images for after
-    Img img;
-    if (!load(img, srcPath("image.jpg")))
-        return 0;
-
-    img = reduce(img, 1.5);
-    w = img.width() + decal * divsX;
-    h = img.height() + decal * divsY + ui_decal;
+    
+    // w = img.width() + decal * divsX;
+    // h = img.height() + decal * divsY + ui_decal;
     openWindow(w, h, "Puzzler - Atprog");
-
+    
     int option = displayMainMenu(divsX, divsY);
-
+    
     switch (option)
     {
-    case 1:
-    {
+        case 1:
+        {
+        Img img;
+        if (!load(img, srcPath("image"+to_string(imageIndex)+".jpg")))
+            return 0;
+        img = reduce(img, 1.5);
         // Initialising the puzzle
         Puzzle puzzleGame(img, divsX, divsY);
         clearWindow();
