@@ -78,7 +78,7 @@ Ce projet est un jeu de puzzle en C++ utilisant la librairie Imagine++. Le jeu p
 ├── PuzzlePiece.h
 ├── README.md
 └── main.cpp
-````
+```
 
 
 ## Contribution
