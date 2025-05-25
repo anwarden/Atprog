@@ -16,7 +16,6 @@ Ce projet est un jeu de puzzle en C++ utilisant la librairie Imagine++. Le jeu p
 * **Mélange des pièces :** Les carrés sont mélangés de manière aléatoire.
 * **Interaction utilisateur :** Le joueur peut échanger la position de deux carrés adjacents (ou par glisser-déposer).
 * **Résolution :** Le jeu détecte automatiquement lorsque l'image est correctement réassemblée.
-* **Contrainte de temps :** Un chronomètre ajoute un défi supplémentaire.
 * **Nombre de swaps :** Enregistrement du nombres de swaps pour chaque puzzle complété.
 
 ## Prérequis
