@@ -1,1 +1,4 @@
+##QtCreator configuration file to be ignored
 CMakeLists.txt.user
+#Vscode configuration folder to be ignored 
+.vscode/

@@ -12,9 +12,8 @@ Ce projet est un jeu de puzzle en C++ utilisant la librairie Imagine++. Le jeu p
 * **Interaction utilisateur :** Le joueur peut échanger la position de deux carrés adjacents (ou par glisser-déposer).
 * **Résolution :** Le jeu détecte automatiquement lorsque l'image est correctement réassemblée.
 * **Contrainte de temps :** Un chronomètre ajoute un défi supplémentaire.
-* **Meilleur score :** Enregistrement du meilleur temps pour chaque puzzle complété.
-* **Classement (Leaderboard) :** Affichage des meilleurs scores des joueurs (implémentation à définir : local ou potentiellement en ligne).
-
+* **Nombre de swaps :** Enregistrement du nombres de swaps pour chaque puzzle complété.
+- 
 ## Prérequis
 
 * Un compilateur C++ (par exemple, g++ ou gcc).

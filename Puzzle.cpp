@@ -60,7 +60,7 @@ void Puzzle::show(string ui_text, int ui_x, int ui_y) const
     const int x_margin = 1, y_margin = 1;
     clearWindow();
     ::Image<Color> gamemenu;
-    load(gamemenu, srcPath("gamemenu.png"));
+    load(gamemenu, srcPath("Media/gamemenu.png"));
     display(gamemenu,   0,   0);
     for (int col = 0; col < divX; ++col)
         for (int row = 0; row < divY; ++row)

@@ -25,7 +25,7 @@ void displayImageMenu()
     clearWindow();
     // drawString(w/2, h/2, "Select an image", BLACK, 40);
     Image<Color> menu;
-    load(menu, srcPath("imageSelectionMenu.jpg"));   //Images selection menu
+    load(menu, srcPath("Media/imageSelectionMenu.jpg"));   //Images selection menu
     display(menu, 0, 0);
 
     int choice = 0;
@@ -50,7 +50,7 @@ int displayMainMenu(int &divsX, int &divsY)
     clearWindow();
     fillRect(0, 0, w, h, BACKGROUND_COLOR);
     Image<Color> menu;
-    load(menu, srcPath("menu.png"));
+    load(menu, srcPath("Media/menu.png"));
     display(menu, 0, 0);
 
     int choice = 0;
@@ -72,7 +72,7 @@ int displayMainMenu(int &divsX, int &divsY)
     {
         clearWindow();
         Image<Color> difficulties;
-        load(difficulties, srcPath("difficulties.png"));
+        load(difficulties, srcPath("Media/difficulties.png"));
         display(difficulties, 0, 0);
         int diff = 0;
         do
@@ -120,7 +120,7 @@ int displayMainMenu(int &divsX, int &divsY)
 void displayHowToPlayMenu() {
     clearWindow();
     Image<Color> menu;
-    if (!load(menu, srcPath("HowToPlayMenu.png"))) return;
+    if (!load(menu, srcPath("Media/HowToPlayMenu.png"))) return;
     display(menu, 0, 0);
 
     Event e;
@@ -200,7 +200,7 @@ int main()
         case 1:
         {
         Img img;
-        if (!load(img, srcPath("image"+to_string(imageIndex)+".jpg")))
+        if (!load(img, srcPath("Media/image"+to_string(imageIndex)+".jpg")))
             return 0;
         img = reduce(img, 1.5);
         // Initialising the puzzle
