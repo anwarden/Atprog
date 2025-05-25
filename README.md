@@ -4,6 +4,11 @@
 
 Ce projet est un jeu de puzzle en C++ utilisant la librairie Imagine++. Le jeu propose au joueur de résoudre un puzzle en réassemblant une image divisée en carrés mélangés. Des fonctionnalités telles que des contraintes de temps, un système de meilleur score et un classement des joueurs sont prévues.
 
+## Capture d'écran - Puzzler.io
+![Puzzle Preview](Media/Capture.png)
+
+
+
 ## Fonctionnalités Principales (Planifiées)
 
 * **Sélection d'image :** Possibilité de choisir une image parmi un ensemble prédéfini (ou potentiellement d'en charger une).
@@ -13,7 +18,7 @@ Ce projet est un jeu de puzzle en C++ utilisant la librairie Imagine++. Le jeu p
 * **Résolution :** Le jeu détecte automatiquement lorsque l'image est correctement réassemblée.
 * **Contrainte de temps :** Un chronomètre ajoute un défi supplémentaire.
 * **Nombre de swaps :** Enregistrement du nombres de swaps pour chaque puzzle complété.
-- 
+
 ## Prérequis
 
 * Un compilateur C++ (par exemple, g++ ou gcc).
@@ -51,6 +56,7 @@ Ce projet est un jeu de puzzle en C++ utilisant la librairie Imagine++. Le jeu p
     ```
 
 ## Structure du Projet (Proposition Initiale)
+```
 .
 ├── .gitignore
 ├── .vscode/
@@ -72,6 +78,7 @@ Ce projet est un jeu de puzzle en C++ utilisant la librairie Imagine++. Le jeu p
 ├── PuzzlePiece.h
 ├── README.md
 └── main.cpp
+````
 
 
 ## Contribution
