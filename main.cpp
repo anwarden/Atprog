@@ -44,6 +44,7 @@ void displayImageMenu()
     imageIndex = choice;
 }
 
+//Displays the main menu, the difficulties menu and the rules menu
 int displayMainMenu(int &divsX, int &divsY)
 {
     clearWindow();
@@ -66,7 +67,7 @@ int displayMainMenu(int &divsX, int &divsY)
         }
     } while (choice == 0);
 
-    // Si Jouer, demander la difficulté
+    // If the user starts the game, then choose the difficulty
     if (choice == 1)
     {
         clearWindow();
@@ -111,9 +112,25 @@ int displayMainMenu(int &divsX, int &divsY)
         }
         displayImageMenu();
     }
+
     return choice;
 }
 
+//Displays howToPlay Menu
+void displayHowToPlayMenu() {
+    clearWindow();
+    Image<Color> menu;
+    if (!load(menu, srcPath("HowToPlayMenu.png"))) return;
+    display(menu, 0, 0);
+
+    Event e;
+    // wait until the user presses '0'
+    do {
+        getEvent(0, e);
+    } while (!(e.type == EVT_KEY_ON && e.key == '0'));
+}
+
+// Selects the Puzzle tile
 void mouse2cell(Img img, int &cellX, int &cellY)
 {
     int mouseX, mouseY;
@@ -136,6 +153,7 @@ void mouse2cell(Img img, int &cellX, int &cellY)
     // cout << "Mouse in : " << mouseX << " , " << mouseY << " to : " << cellX << " , " << cellY << endl;
 }
 
+// Displays the selected tiles and highlights them
 void mouseControl(int &cellX1, int &cellY1, int &cellX2, int &cellY2, Img img)
 {
     while (true)
@@ -166,11 +184,19 @@ int main()
     // w = img.width() + decal * divsX;
     // h = img.height() + decal * divsY + ui_decal;
     openWindow(w, h, "Puzzler - Atprog");
-    
-    int option = displayMainMenu(divsX, divsY);
+
+    int option;
+    do {
+        option = displayMainMenu(divsX, divsY);  // existing menu (1=Play, 2=HowToPlay, 3=Quit)
+
+        if (option == 2) {
+        displayHowToPlayMenu();
+        }
+    } while (option == 2);
     
     switch (option)
     {
+        // If the user chooses to play the game
         case 1:
         {
         Img img;
@@ -181,7 +207,7 @@ int main()
         Puzzle puzzleGame(img, divsX, divsY);
         clearWindow();
 
-        puzzleGame.show("This is the original image !!, Get ready ...", w / 10, h - ui_decal / 2);
+        puzzleGame.show("This is the original image !!, Get ready ...", w / 10, h - ui_decal / 2 );
         milliSleep(4000);
 
         // Game mechanics
