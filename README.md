@@ -85,3 +85,8 @@ Ce projet est un jeu de puzzle en C++ utilisant la librairie Imagine++. Le jeu p
 ### Binôme fondateur de projet
 - Anwar Kardid
 - AbdelAdim Boudersa 
+
+#### Ecole: (ENPC) École nationale des ponts et chaussées.
+
+
+<img src="Media/logoENPC.png" alt="Puzzle Preview" width="300"/>
