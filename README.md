@@ -51,6 +51,28 @@ Ce projet est un jeu de puzzle en C++ utilisant la librairie Imagine++. Le jeu p
     ```
 
 ## Structure du Projet (Proposition Initiale)
+.
+├── .gitignore
+├── .vscode/
+├── CMakeLists.txt
+├── LICENSE
+├── build/
+├── Media/
+│   ├── image1.jpg
+│   ├── image2.jpg
+│   ├── image3.jpg
+│   ├── image4.jpg
+│   ├── image5.jpg
+│   ├── image7.jpg
+│   ├── image8.jpg
+│   └── image9.jpg
+├── Puzzle.cpp
+├── Puzzle.h
+├── PuzzlePiece.cpp
+├── PuzzlePiece.h
+├── README.md
+└── main.cpp
+
 
 ## Contribution
 ### Binôme fondateur de projet
