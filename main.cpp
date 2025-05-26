@@ -236,7 +236,7 @@ int main()
                 Image<Color> winBanner;
                 load(winBanner, srcPath("Media/winBanner.png"));
                 display(winBanner, 0, 0);
-                drawString(w / 2-300, h/2, "You Win !! After " + to_string(swap_counter) + " swaps.", WHITE, 27, 0, false, true);
+                drawString(w / 2-300, h/2, "You Win !! After " + to_string(swap_counter) + " swaps.", WHITE, 30, 0, false, true);
                 break;
             }
         }
