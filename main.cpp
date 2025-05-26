@@ -231,7 +231,12 @@ int main()
             puzzleGame.show("Puzzle swaps: " + to_string(swap_counter), w / 10, h - ui_decal / 2);
             if (puzzleGame.isSolved())
             {
-                puzzleGame.show("You Win !! After " + to_string(swap_counter) + " swaps.", w / 10, h - ui_decal / 2);
+                // puzzleGame.show("You Win !! After " + to_string(swap_counter) + " swaps.", w / 10, h - ui_decal / 2);
+                clearWindow();
+                Image<Color> winBanner;
+                load(winBanner, srcPath("Media/winBanner.png"));
+                display(winBanner, 0, 0);
+                drawString(w / 2-300, h/2, "You Win !! After " + to_string(swap_counter) + " swaps.", WHITE, 27, 0, false, true);
                 break;
             }
         }
